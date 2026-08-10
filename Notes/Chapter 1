@@ -1,0 +1,15 @@
+Notes:
+The attempts counter is calculated by ATM to reduce work for CO (By very little!).
+
+Assumptions about under-lying protocols:
+  All the messages between client and server reach their destinations without fail on the first try (No loss, No corruption, No duplication).
+
+Flaws identified:
+  If the user ends the session before the card is blocked and scans it again, he/she gets X amount of chances once again.
+  No check to verify if the cash is dispensed and received by the user.
+  The handshake shouldn't be part of the applicatiion-layer protocol.
+
+Open Questions:
+  What happens when a message fails to reach destination?
+  How to verify if the client is legitimate (A host acting as an ATM/CO case) End-point Authentication?
+  How's CIA achieved? Data is prone to sniffing!
